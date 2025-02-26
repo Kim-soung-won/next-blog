@@ -2,8 +2,8 @@
 import Link from "next/link";
 
 export default function AwesomPage() {
-  return <main>
+  return <div>
     <h1>NextJS Is Awesome!</h1>
-    <h2><Link href="/about">Go Awesome</Link></h2>
-  </main>
+    <h2><Link href="/about">Go About</Link></h2>
+  </div>
 }
