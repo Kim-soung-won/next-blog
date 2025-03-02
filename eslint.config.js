@@ -92,8 +92,8 @@ export default [
       ],
 
       // TypeScript 관련 규칙 강화
-      // "@typescript-eslint/explicit-function-return-type": "warn",
-      // "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/explicit-function-return-type": "warn",
+      "@typescript-eslint/no-explicit-any": "warn",
 
       "import/extensions": [
         "error",
@@ -230,6 +230,13 @@ export default [
           when: "always",
         },
       ],
+
+      // 들여쓰기 깊이 제한
+      "max-depth": ["error", 2],
+      // 함수의 매개변수 개수 제한
+      "max-params": ["error", 3],
+      // 함수의 길이 제한
+      "max-lines-per-function": ["error", { max: 10 }],
 
       "@typescript-eslint/naming-convention": [
         "error",

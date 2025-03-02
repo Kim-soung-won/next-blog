@@ -1,47 +1,69 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
     "noErrorTruncation": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-
+    "jsx": "preserve",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./",
+    "baseUrl": "./", // 프로젝트 루트를 기준으로 변경
     "paths": {
-      "@/app": ["./scr/app"],
-      "@/app/*": ["./src/app/*"],
-      "@/assets": ["./src/assets"],
-      "@/assets/*": ["./src/assets/*"],
-      "@/entities": ["./src/entities"],
-      "@/entities/*": ["./src/entities/*"],
-      "@/features": ["./src/features"],
-      "@/features/*": ["./src/features/*"],
-      "@/pages": ["./src/pages"],
-      "@/pages/*": ["./src/pages/*"],
-      "@/shared": ["./src/shared"],
-      "@/shared/*": ["./src/shared/*"],
-      "@/widgets": ["./src/widgets"],
-      "@/widgets/*": ["./src/widgets/*"],
-      "@/APP": ["./app"]
-    }
+      "@/app/*": [
+        "src/app/*"
+      ],
+      "@/assets/*": [
+        "assets/*"
+      ],
+      "@/entities/*": [
+        "src/entities/*"
+      ],
+      "@/features/*": [
+        "src/features/*"
+      ],
+      "@/shared/*": [
+        "src/shared/*"
+      ],
+      "@/widgets/*": [
+        "src/widgets/*"
+      ]
+    },
+    "allowJs": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "src",
+    "app",
+    "src/entities/audit/signacc/signacc.queries.ts",
     "src/shared/ui/material-ui/dialog/scroll-content-dialog/scroll-content-dialog.ui.tsx",
-    "src/entities/audit/signacc/signacc.queries.ts"
+    ".next/types/**/*.ts"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
