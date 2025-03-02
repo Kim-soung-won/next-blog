@@ -9,7 +9,7 @@ export default function MainHeader() {
     <header className={classes.header}>
       <Link className={classes.logo} href="/">
         {/* Image component를 사용하면 이미지를 최적화 할 수 있다. */}
-        <Image src={logo} alt="A plate with food on it"/>
+        <Image src={logo} alt="A plate with food on it" priority />
         Hello Next JS
       </Link>
       <nav className={classes.nav}>
