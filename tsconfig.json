@@ -1,27 +1,47 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
+    "noErrorTruncation": true,
+
+    /* Bundler mode */
     "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
+      "@/app": ["./scr/app"],
+      "@/app/*": ["./src/app/*"],
+      "@/assets": ["./src/assets"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/entities": ["./src/entities"],
+      "@/entities/*": ["./src/entities/*"],
+      "@/features": ["./src/features"],
+      "@/features/*": ["./src/features/*"],
+      "@/pages": ["./src/pages"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/shared": ["./src/shared"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/widgets": ["./src/widgets"],
+      "@/widgets/*": ["./src/widgets/*"],
+      "@/APP": ["./app"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "src/shared/ui/material-ui/dialog/scroll-content-dialog/scroll-content-dialog.ui.tsx",
+    "src/entities/audit/signacc/signacc.queries.ts"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

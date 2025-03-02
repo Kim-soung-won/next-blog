@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import mealIcon from '@/assets/icons/meal.png';
-import communityIcon from '@/assets/icons/community.png';
-import eventsIcon from '@/assets/icons/events.png';
-import classes from './page.module.css';
+import mealIcon from "@/assets/icons/meal.png";
+import communityIcon from "@/assets/icons/community.png";
+import eventsIcon from "@/assets/icons/events.png";
+import classes from "./page.module.css";
 
 export default function CommunityPage() {
   return (
@@ -19,11 +19,17 @@ export default function CommunityPage() {
 
         <ul className={classes.perks}>
           <li>
-            <Image src={mealIcon} alt="A delicious meal" />
+            <Image
+              src={mealIcon}
+              alt="A delicious meal"
+            />
             <p>Share & discover recipes</p>
           </li>
           <li>
-            <Image src={communityIcon} alt="A crowd of people, cooking" />
+            <Image
+              src={communityIcon}
+              alt="A crowd of people, cooking"
+            />
             <p>Find new friends & like-minded people</p>
           </li>
           <li>
