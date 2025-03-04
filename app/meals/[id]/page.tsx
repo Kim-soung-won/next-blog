@@ -13,6 +13,7 @@ export default async function MealDetailsPage({ params }: { params: Params }) {
   const meal = await getMeal(parseInt(params.id));
 
   if (!meal) {
+    // 가장 가까운 not found 페이지로 렌더링
     notFound();
   }
 
