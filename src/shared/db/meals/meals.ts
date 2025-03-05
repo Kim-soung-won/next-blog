@@ -51,7 +51,6 @@ export async function saveMeal(meal: MealDto, image: File) {
       'INSERT INTO meals (title, summary, instructions, creator, creator_email, image, slug) VALUES ($1, $2, $3, $4, $5, $6, $7)',
       [mealDto.title, mealDto.summary, mealDto.instructions, mealDto.creator, mealDto.creator_email, mealDto.image, mealDto.slug]
     );
-    console.log('Shared meal:', mealDto);
   } catch (error) {
     console.error('데이터를 저장하는 데 실패했습니다:', error);
   }

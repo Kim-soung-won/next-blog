@@ -1,8 +1,8 @@
-'use client'
 import ImagePicker from '@/features/meals/meal-share/image-picker';
 import classes from './page.module.css';
 import { shareMeal } from '@/shared/db/meals/actions';
 import { Meal } from '@/entities/meals/meals.types';
+import MealsFormSubmit from '@/features/meals/meal-share/meals-form-submit';
 
 export default function ShareMealPage() {
   
@@ -60,7 +60,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label="Meal Image" name="image"/>
           <p className={classes.actions}>
-            <button type="submit">Share Meal</button>
+            <MealsFormSubmit />
           </p>
         </form>
       </main>
