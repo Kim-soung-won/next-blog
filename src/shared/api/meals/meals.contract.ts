@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const MealSchema = z.object({
+export const MealDtoSchema = z.object({
   id: z.number().optional(),
   slug : z.string(),
   title: z.string(),
@@ -11,4 +11,6 @@ export const MealSchema = z.object({
   creator_email: z.string(),
 })
 
-export const MealsSchema = z.array(MealSchema);
+export const MealsDtoSchema = z.array(MealDtoSchema);
+
+export const CreateMealDtoSchema = MealDtoSchema;
