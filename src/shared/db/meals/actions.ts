@@ -2,6 +2,7 @@
 
 import { Meal } from "@/entities/meals";
 import { saveMeal } from "./meals";
+import { redirect } from "next/navigation";
 
 export async function shareMeal(meal: Meal, image: File) {
   'use server';
@@ -9,6 +10,5 @@ export async function shareMeal(meal: Meal, image: File) {
   const mealDto: Meal = meal;
 
   await saveMeal(mealDto, image);
-
-  console.log("Shared meal:", mealDto);
+  redirect("/meals");
 }
