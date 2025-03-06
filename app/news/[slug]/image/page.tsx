@@ -5,8 +5,12 @@ interface ImagePageProps {
   slug: string;
 }
 
-export default function ImagePage({ params }: { params: ImagePageProps }) {
-  const slug = params.slug;
+export default async function ImagePage({
+  params,
+}: {
+  params: ImagePageProps;
+}) {
+  const { slug } = await params;
   const newsItem = DUMMY_NEWS.find((news) => news.slug === slug);
 
   if (!newsItem) {
