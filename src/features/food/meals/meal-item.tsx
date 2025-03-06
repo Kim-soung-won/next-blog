@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import classes from './meal-item.module.css';
-import { Meal } from '@/entities/meals/meals.types';
+import { Meal } from '@/entities/food/meals/meals.types';
 
 interface MealItemProps {
   meal: Meal;
@@ -24,7 +24,7 @@ export default function MealItem({ meal }: MealItemProps) {
       <div className={classes.content}>
         <p className={classes.summary}>{meal.summary}</p>
         <div className={classes.actions}>
-          <Link href={`/meals/${meal.id}`}>View Details</Link>
+          <Link href={`/food/meals/${meal.id}`}>View Details</Link>
         </div>
       </div>
     </article>

@@ -1,10 +1,10 @@
 import fs from 'node:fs';
 
-import db from "../db";
-import { MealsDtoSchema, MealDto, MealDtoSchema } from '@/shared/api/meals';
+import { db } from "@/shared/db";
+import { MealsDtoSchema, MealDto, MealDtoSchema } from '@/shared/api/food/meals';
 import slugify from "slugify";
 import xss from "xss";
-import { MealSchema } from '@/entities/meals/meals.contract';
+import { MealSchema } from '@/entities/food/meals/meals.contract';
 
 export async function getMeals(): Promise<MealDto[]> {
   try {

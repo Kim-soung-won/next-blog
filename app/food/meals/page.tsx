@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classes from "./page.module.css";
-import { getMeals } from "@/shared/db/meals/meals";
-import MealsGrid from "@/features/meals/meals-gird";
+import { getMeals } from "@/shared/db/food/meals/meals";
+import MealsGrid from "@/features/food/meals/meals-gird";
 import { Suspense } from "react";
 import MealsLoading from "./loading-out";
 
@@ -19,7 +19,7 @@ export default function MealsPage() {
         </h1>
         <p>Choose your favorite recipe and cook it yourself.</p>
         <p className={classes.cta}>
-          <Link href="/meals/share">
+          <Link href="/food/meals/share">
             Share Your Favorit Recipe
           </Link>
         </p>

@@ -1,4 +1,4 @@
-import { Meal } from "@/entities/meals/meals.types";
+import { Meal } from "@/entities/food/meals/meals.types";
 import MealItem from "./meal-item";
 import classes from "./meals-grid.module.css";
 

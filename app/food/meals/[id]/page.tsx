@@ -1,6 +1,6 @@
 import classes from "./page.module.css";
 import Image from "next/image";
-import { getMeal } from "@/shared/db/meals/meals";
+import { getMeal } from "@/shared/db/food/meals/meals";
 import { notFound } from "next/navigation";
 
 

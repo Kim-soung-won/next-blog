@@ -1,8 +1,8 @@
-import ImagePicker from '@/features/meals/meal-share/image-picker';
+import ImagePicker from '@/features/food/meals/meal-share/image-picker';
 import classes from './page.module.css';
-import { shareMeal } from '@/shared/db/meals/actions';
-import { Meal } from '@/entities/meals/meals.types';
-import MealsFormSubmit from '@/features/meals/meal-share/meals-form-submit';
+import { shareMeal } from '@/shared/db/food/meals/actions';
+import { Meal } from '@/entities/food/meals/meals.types';
+import MealsFormSubmit from '@/features/food/meals/meal-share/meals-form-submit';
 
 export default function ShareMealPage() {
   
