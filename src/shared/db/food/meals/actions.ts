@@ -1,4 +1,5 @@
-'use server';
+
+'use server'
 import { Meal } from "@/entities/food/meals";
 import { saveMeal } from "./meals";
 import { redirect } from "next/navigation";

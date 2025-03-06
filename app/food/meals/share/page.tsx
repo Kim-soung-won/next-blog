@@ -1,3 +1,4 @@
+'use client';
 import ImagePicker from '@/features/food/meals/meal-share/image-picker';
 import classes from './page.module.css';
 import { shareMeal } from '@/shared/db/food/meals/actions';
