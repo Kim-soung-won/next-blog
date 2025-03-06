@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavLink from "./nav-link";
 
 export default function NewsPageMainHeader() {
   return (
@@ -8,13 +9,13 @@ export default function NewsPageMainHeader() {
       </div>
       <ul>
         <li>
-          <Link href="/news">News Home</Link>
+          <NavLink href="/news">News Home</NavLink>
         </li>
         <li>
-          <Link href="/news/archive">Archive Home</Link>
+          <NavLink href="/news/archive">Archive Home</NavLink>
         </li>
         <li>
-          <Link href="/food">Food Home</Link>
+          <NavLink href="/food">Food</NavLink>
         </li>
       </ul>
     </header>
