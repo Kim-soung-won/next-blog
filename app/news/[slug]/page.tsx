@@ -5,9 +5,13 @@ interface Params {
   slug: string;
 }
 
-export default function NewsDetailPage({ params }: { params: Params }) {
-  const newsSlug = params.slug;
-  const newsItem = DUMMY_NEWS.find((news) => news.slug === newsSlug);
+export default async function NewsDetailPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
+  const newsItem = DUMMY_NEWS.find((news) => news.slug === slug);
 
   if (!newsItem) {
     notFound();
