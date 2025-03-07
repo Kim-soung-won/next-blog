@@ -1,4 +1,10 @@
+import { Newses } from "@/entities/news/news.types";
+import Image from "next/image";
 import Link from "next/link";
+
+interface NewsItemProps {
+  news: Newses;
+}
 
 export default function NewsList({ news }) {
   return (
@@ -6,7 +12,7 @@ export default function NewsList({ news }) {
       {news.map((newsItem) => (
         <li key={newsItem.id}>
           <Link href={`/news/${newsItem.slug}`}>
-            <img
+            <Image
               src={`/images/news/${newsItem.image}`}
               alt={newsItem.title}
             />

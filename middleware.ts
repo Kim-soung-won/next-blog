@@ -6,9 +6,9 @@ import { NextResponse } from "next/server";
  * @param {Request} request
  */
 export function middleware(request) {
-  console.log("======================================");
-  console.log(request);
-  console.log("======================================");
+  // console.log("======================================");
+  // console.log(request);
+  // console.log("======================================");
   return NextResponse.next();
 }
 

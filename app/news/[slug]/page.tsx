@@ -1,4 +1,5 @@
 import { DUMMY_NEWS } from "@/shared/dummy-data/dummy-news";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -22,7 +23,7 @@ export default async function NewsDetailPage({
     <article className="news-article">
       <header>
         <Link href={`/news/${newsItem.slug}/image`}>
-          <img
+          <Image
             src={`/images/news/${newsItem.image}`}
             alt={newsItem.title}
           />

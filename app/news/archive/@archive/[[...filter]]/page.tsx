@@ -1,3 +1,4 @@
+import { Newses } from "@/entities/news/news.types";
 import NewsList from "@/features/news/main/news-list";
 import {
   getAvailableNewsMonths,
@@ -31,7 +32,7 @@ export default async function FilterNewsPage({
   const selectedYear = filter?.[0];
   const selectedMonth = filter?.[1];
 
-  let news;
+  let news: Newses;
   let links = getAvailableNewsYears();
 
   if (selectedYear && !selectedMonth) {

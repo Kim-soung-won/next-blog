@@ -1,10 +1,11 @@
 import logo from "@/assets/logo.jpg";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function NewsPage() {
   return (
     <div id="home">
-      <img
+      <Image
         src={logo.src}
         alt="A newspaper"
       />

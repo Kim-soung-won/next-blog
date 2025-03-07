@@ -1,9 +1,8 @@
+import Link from "next/link";
+import Image from "next/image";
 
-import Link from 'next/link';
-import Image from 'next/image';
-
-import classes from './meal-item.module.css';
-import { Meal } from '@/entities/food/meals/meals.types';
+import classes from "./meal-item.module.css";
+import { Meal } from "@/entities/food/meals/meals.types";
 
 interface MealItemProps {
   meal: Meal;
@@ -14,7 +13,12 @@ export default function MealItem({ meal }: MealItemProps) {
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
-          <Image src={meal.image} alt={meal.title} fill />
+          <Image
+            src={meal.image}
+            alt={meal.title}
+            fill
+            sizes="100%"
+          />
         </div>
         <div className={classes.headerText}>
           <h2>{meal.title}</h2>
