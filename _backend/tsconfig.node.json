@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./", // 프로젝트 루트를 기준으로 변경
+    "paths": {
+      "@/app/*": [
+        "src/app/*"
+      ],
+      "@/assets/*": [
+        "assets/*"
+      ],
+      "@/entities/*": [
+        "src/entities/*"
+      ],
+      "@/features/*": [
+        "src/features/*"
+      ],
+      "@/shared/*": [
+        "src/shared/*"
+      ],
+      "@/widgets/*": [
+        "src/widgets/*"
+      ]
+    },
+  }
+}
