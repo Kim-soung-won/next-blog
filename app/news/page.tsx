@@ -8,6 +8,8 @@ export default function NewsPage() {
       <Image
         src={logo.src}
         alt="A newspaper"
+        width={100}
+        height={100}
       />
       <h1>A News Site For The Next Generation</h1>
       <p>

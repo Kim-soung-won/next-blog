@@ -117,6 +117,8 @@ app.use(cors())
 
 app.get('/news', async (req, res) => {
   const client = await pool.connect();
+  await client.query(`SET search_path TO ${process.env.DB_SCHEMA}`);
+
 
   try {
     const result = await client.query('SELECT * FROM news');

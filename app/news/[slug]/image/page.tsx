@@ -24,6 +24,8 @@ export default async function ImagePage({
       <Image
         src={`/images/news/${newsItem.image}`}
         alt={newsItem.title}
+        width={100}
+        height={100}
       />
     </div>
   );

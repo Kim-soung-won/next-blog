@@ -15,6 +15,8 @@ export default function NewsList({ news }) {
             <Image
               src={`/images/news/${newsItem.image}`}
               alt={newsItem.title}
+              width={200}
+              height={200}
             />
             <span>{newsItem.title}</span>
           </Link>
