@@ -122,7 +122,11 @@ app.get('/news', async (req, res) => {
 
   try {
     const result = await client.query('SELECT * FROM news');
-    res.json(result.rows);
+
+    // 3초 후에 응답 보냄
+    setTimeout(() => {
+      res.json(result.rows);
+    }, 3000);
   } catch (error) {
     console.error('뉴스 데이터 조회 중 오류 발생:', error);
     res.status(500).json({ error: '서버 오류' });
