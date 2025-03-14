@@ -66,9 +66,7 @@ const pool = new Pool({
 // 데이터베이스 초기화 함수
 async function initDb() {
   const client = await pool.connect();
-
   await client.query(`SET search_path TO ${process.env.DB_SCHEMA}`);
-
   try {
     // 테이블 생성
     await client.query(`
@@ -79,7 +77,33 @@ async function initDb() {
         content TEXT,
         date TEXT,
         image TEXT
-      )
+      );`);
+     await client.query(` CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        first_name TEXT,
+        last_name TEXT,
+        email TEXT
+      );`);
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS posts (
+        id SERIAL PRIMARY KEY,
+        image_url TEXT NOT NULL,
+        title TEXT NOT NULL,
+        content TEXT NOT NULL,
+        created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+        user_id INTEGER,
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+      );
+    `);
+    await client
+      .query(`
+      CREATE TABLE IF NOT EXISTS likes (
+        user_id INTEGER,
+        post_id INTEGER,
+        PRIMARY KEY (user_id, post_id),
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+        FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
+      );
     `);
 
     // 기존 데이터 확인
@@ -104,6 +128,17 @@ async function initDb() {
       }
       console.log('DUMMY_NEWS 데이터를 삽입했습니다.');
     }
+
+    const userResult = await client.query('SELECT COUNT(*) AS count FROM users');
+    const userCount = parseInt(userResult.rows[0].count);
+
+    if (userCount === 0) {
+      const insertQuery = `INSERT INTO users (first_name, last_name, email) VALUES ($1, $2, $3)`;
+      
+      await client.query(insertQuery, ['John', 'Doe', 'john@example.com']);
+      await client.query(insertQuery, ['Max', 'Schwarz', 'max@example.com']);
+    }
+
   } catch (error) {
     console.error('데이터베이스 초기화 중 오류 발생:', error);
   } finally {
