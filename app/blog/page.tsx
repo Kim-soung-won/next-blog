@@ -4,7 +4,7 @@ import Posts from "@/features/blog/posts";
 import { getPosts } from "@/shared/db/blog/posts";
 
 async function LatestPosts() {
-  const latestPosts = await getPosts(2);
+  const latestPosts = await getPosts();
   return <Posts posts={latestPosts} />;
 }
 

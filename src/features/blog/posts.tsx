@@ -22,8 +22,8 @@ function Post({ post }) {
             <h2>{post.title}</h2>
             <p>
               Shared by {post.userFirstName} on{" "}
-              <time dateTime={post.createdAt}>
-                {formatDate(post.createdAt)}
+              <time dateTime={post.createdat}>
+                {formatDate(post.createdat)}
               </time>
             </p>
           </div>
